@@ -1,0 +1,4 @@
+# Ignore Django migration files
+**/__pycache__/
+**/migrations/
+**/venv/
