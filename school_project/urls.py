@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-router=DefaultRouter()
+router = DefaultRouter()
 router.register('student', views.StudentViewSet, basename='student')
 router.register('parent', views.ParentViewSet, basename='parent')
 router.register('document_upload', views.DocumentUploadViewSet, basename='document_upload')
@@ -33,6 +33,7 @@ urlpatterns = [
     path('auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('enroll/', views.Enroll.as_view(), name='enroll'),
     path('enroll/success/', views.SuccessView.as_view(), name='success'),
+    path('student/import-export/', views.StudentImportExportView.as_view(), name='student_import_export'),
 ]
 
 if settings.DEBUG:		# for developer mode
