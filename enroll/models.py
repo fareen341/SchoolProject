@@ -34,6 +34,7 @@ class Student(models.Model):
     contact_detail = models.CharField(max_length=20, verbose_name="Contact")
     address = models.TextField()
 
+    # taken academc details together, cuz student signals need below info to automatically create enrollment_id
     enrollment_id = models.CharField(max_length=20, null=True, blank=True, editable=False)
     class_name = models.CharField(max_length=10)
     section = models.CharField(max_length=10)
